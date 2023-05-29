@@ -1,8 +1,8 @@
 import { getAuth } from '@clerk/nextjs/server'
 
-import { GetServerSideProps } from 'next'
+import { type GetServerSideProps } from 'next'
 
-import { trpcCaller } from '~/utils/trpc.helper'
+import { trpcCaller } from '@/utils/trpc.helper'
 
 /** This page is a special redirect for after Clerk sign up  */
 const SignedUpPage = () => null
@@ -11,7 +11,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const { userId } = getAuth(req)
 
   if (userId) {
-    const trpc = await trpcCaller({ req, res })
+    const trpc = trpcCaller({ req, res })
 
     try {
       await trpc.user.create()
