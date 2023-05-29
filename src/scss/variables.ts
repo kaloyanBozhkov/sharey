@@ -22,7 +22,6 @@ export const breakpoints = {
 }
 
 export const defaultTheme: MantineThemeOverride = {
-  // @ts-expect-error @TODO type annonate properly
   // eslint-disable-next-line
   colors,
   spacing,
