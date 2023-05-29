@@ -7,9 +7,31 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "stylelint_check": "stylelint 'src/**/*.{scss,*.scss,css,*.css,*.scss.d.ts,.scss.d.ts}'",
+    "type_watch": "tsc --project . --watch",
+    "type_check": "tsc --project .",
+    "prettier_check": "prettier --check 'src/**/*.{js,*.js,ts,*.ts,tsx,*.tsx,scss,*.scss,css,*.css,json,*.scss.d.ts,.scss.d.ts}'",
+    "check_all": "npm run prettier_check && npm run lint_check && npm run stylelint_check && npm run type_check",
+    "lint_fix": "next lint --fix",
+    "stylelint_fix": "stylelint 'src/**/*.{scss,*.scss,css,*.css,*.scss.d.ts,.scss.d.ts}' --fix",
+    "prettier_fix": "prettier --write 'src/**/*.{js,*.js,ts,*.ts,tsx,*.tsx,scss,*.scss,css,*.css,json,*.scss.d.ts,.scss.d.ts}'",
+    "fix_all": "npm run prettier_fix && npm run lint_fix && npm run stylelint_fix"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.16.4",
+    "@clerk/themes": "^1.6.3",
+    "@emotion/react": "^11.10.8",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mantine/core": "^6.0.10",
+    "@mantine/dropzone": "^6.0.10",
+    "@mantine/form": "^6.0.10",
+    "@mantine/hooks": "^6.0.10",
+    "@mantine/modals": "^6.0.10",
     "@prisma/client": "^4.14.0",
     "@t3-oss/env-nextjs": "^0.3.1",
     "@tanstack/react-query": "^4.29.7",
@@ -21,7 +43,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "superjson": "1.12.2",
-    "zod": "^3.21.4"
+    "zod": "^3.21.4",
+    "zustand": "^4.3.7"
   },
   "devDependencies": {
     "@types/eslint": "^8.37.0",
@@ -33,9 +56,28 @@
     "eslint": "^8.40.0",
     "eslint-config-next": "^13.4.2",
     "prisma": "^4.14.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "sass": "^1.62.1",
+    "stylelint": "^15.6.0",
+    "stylelint-config-recommended-scss": "^11.0.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-prettier": "^3.0.0",
+    "stylelint-scss": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.6",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/prettier": "^2.7.2"
   },
   "ct3aMetadata": {
     "initVersion": "7.13.1"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma",
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seeds/index.ts"
   }
 }

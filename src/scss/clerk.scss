@@ -1,0 +1,18 @@
+.cl-internal-b3fm6y,
+.cl-internal-q6wheb,
+// profile icon on organisation card
+.cl-internal-iu9znb {
+  display: none;
+}
+
+.cl-internal-fbnt3p::after {
+  content: "Secured by Element Human.";
+  display: block;
+  padding: var(--mantine-spacing-sm);
+  margin-bottom: -20px;
+  font-size: small;
+}
+
+.cl-organizationSwitcherTrigger .cl-userPreviewSecondaryIdentifier {
+  max-width: 235px;
+}
