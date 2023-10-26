@@ -12,7 +12,7 @@
     "type_watch": "tsc --project . --watch",
     "type_check": "tsc --project .",
     "prettier_check": "prettier --check 'src/**/*.{js,*.js,ts,*.ts,tsx,*.tsx,scss,*.scss,css,*.css,json,*.scss.d.ts,.scss.d.ts}'",
-    "check_all": "npm run prettier_check && npm run lint_check && npm run stylelint_check && npm run type_check",
+    "check_all": "npm run prettier_check && npm run lint && npm run stylelint_check && npm run type_check",
     "lint_fix": "next lint --fix",
     "stylelint_fix": "stylelint 'src/**/*.{scss,*.scss,css,*.css,*.scss.d.ts,.scss.d.ts}' --fix",
     "prettier_fix": "prettier --write 'src/**/*.{js,*.js,ts,*.ts,tsx,*.tsx,scss,*.scss,css,*.css,json,*.scss.d.ts,.scss.d.ts}'",
